@@ -121,6 +121,16 @@ setup:
 		${FLAGS} ${STB} -o ${BUILDIR}/10_1 && \
 		${BUILDIR}/10_1
 
+11_1: ${SRCDIR}/11_1_diffuse_map.cpp shader_m camera
+	${CC} ${SRCDIR}/11_1_diffuse_map.cpp ${SHADER_M} ${CAMERA} \
+		${FLAGS} ${STB} -o ${BUILDIR}/11_1 && \
+		${BUILDIR}/11_1
+
+11_2: ${SRCDIR}/11_2_specular_map.cpp shader_m camera
+	${CC} ${SRCDIR}/11_2_specular_map.cpp ${SHADER_M} ${CAMERA} \
+		${FLAGS} ${STB} -o ${BUILDIR}/11_2 && \
+		${BUILDIR}/11_2
+
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
 		${FLAGS} -c -o ${CAMERA} 
