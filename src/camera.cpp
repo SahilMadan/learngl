@@ -29,6 +29,10 @@ glm::vec3 Camera::Position() const {
   return position_;
 }
 
+glm::vec3 Camera::Front() const {
+  return front_;
+}
+
 void Camera::UpdateCameraVectors() {
   // Imagine the yaw as an angle offset from the x-axis when looking at a
   // top-down view (looking at x/z plane). x = cos(yaw) and z = sin(yaw).

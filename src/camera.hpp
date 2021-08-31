@@ -19,6 +19,7 @@ class Camera {
     float GetFieldOfView() const;
     glm::mat4 GetViewMatrix() const;
     glm::vec3 Position() const;
+    glm::vec3 Front() const;
 
     void ProcessMovement(CameraMovement movement, float delta_time);
     void ProcessLook(float x_offset, float y_offset);
