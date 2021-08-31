@@ -259,22 +259,39 @@ int main() {
     shader.SetFloat("material.shininess", 32.0f);
 
     // Set light properties
+
+    // Directional
     shader.SetVec3("directionalLight.direction", -0.2f, -1.0f, -0.3f);
-    shader.SetVec3("directionalLight.ambient", 0.2f, 0.2f, 0.2f);
-    shader.SetVec3("directionalLight.diffuse", 0.5f, 0.5f, 0.5f);
-    shader.SetVec3("directionalLight.specular", 1.0f, 1.0f, 1.0f);
+    shader.SetVec3("directionalLight.ambient", 0.05f, 0.05f, 0.05f);
+    shader.SetVec3("directionalLight.diffuse", 0.4f, 0.4f, 0.4f);
+    shader.SetVec3("directionalLight.specular", 0.5f, 0.5f,
+                   0.5f);  // Point lights
 
     for (unsigned int i = 0; i < 4; i++) {
       std::string light_name = "pointLights[" + std::to_string(i) + "].";
       shader.SetVec3(light_name + "position", point_light_positions[i]);
-      shader.SetVec3(light_name + "ambient", 0.2f, 0.2f, 0.2f);
-      shader.SetVec3(light_name + "diffuse", 0.5f, 0.5f, 0.5f);
+      shader.SetVec3(light_name + "ambient", 0.05f, 0.05f, 0.05f);
+      shader.SetVec3(light_name + "diffuse", 0.8f, 0.8f, 0.8f);
       shader.SetVec3(light_name + "specular", 1.0f, 1.0f, 1.0f);
 
       shader.SetFloat(light_name + "constant", 1.0f);
       shader.SetFloat(light_name + "linear", 0.09f);
       shader.SetFloat(light_name + "quadratic", 0.032f);
     }
+
+    // Spot light
+    shader.SetVec3("spotLight.position", camera.Position());
+    shader.SetVec3("spotLight.direction", camera.Front());
+    shader.SetFloat("spotLight.cutoff", glm::cos(glm::radians(12.5f)));
+    shader.SetFloat("spotLight.outer_cutoff", glm::cos(glm::radians(17.5f)));
+
+    shader.SetVec3("spotLight.ambient", 0.05f, 0.05f, 0.05f);
+    shader.SetVec3("spotLight.diffuse", 0.8f, 0.8f, 0.8f);
+    shader.SetVec3("spotLight.specular", 1.0f, 1.0f, 1.0f);
+
+    shader.SetFloat("spotLight.constant", 1.0f);
+    shader.SetFloat("spotLight.linear", 0.09f);
+    shader.SetFloat("spotLight.quadratic", 0.032f);
 
     // Using lookAt...
     auto view = camera.GetViewMatrix();
