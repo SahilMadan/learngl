@@ -131,7 +131,7 @@ int main() {
       glm::vec3(1.5f, 0.2f, -1.5f),   glm::vec3(-1.3f, 1.0f, -1.5f)};
 
   Shader shader("shaders/11_1_diffuse_map.vs",
-                "shaders/12_3_light_casters_spot.fs");
+                "shaders/12_4_light_casters_spot_soft.fs");
 
   unsigned int vao;
   glGenVertexArrays(1, &vao);
@@ -246,6 +246,7 @@ int main() {
     shader.SetVec3("light.position", camera.Position());
     shader.SetVec3("light.direction", camera.Front());
     shader.SetFloat("light.cutoff", glm::cos(glm::radians(12.5f)));
+    shader.SetFloat("light.outer_cutoff", glm::cos(glm::radians(17.5f)));
 
     shader.SetVec3("light.ambient", 0.2f, 0.2f, 0.2f);
     shader.SetVec3("light.diffuse", 0.5f, 0.5f, 0.5f);

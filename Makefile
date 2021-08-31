@@ -146,6 +146,11 @@ setup:
 		${FLAGS} ${STB} -o ${BUILDIR}/12_3 && \
 		${BUILDIR}/12_3
 
+12_4: ${SRCDIR}/12_4_light_casters_spot_soft.cpp shader_m camera
+	${CC} ${SRCDIR}/12_4_light_casters_spot_soft.cpp ${SHADER_M} ${CAMERA} \
+		${FLAGS} ${STB} -o ${BUILDIR}/12_4 && \
+		${BUILDIR}/12_4
+
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
 		${FLAGS} -c -o ${CAMERA} 
