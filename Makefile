@@ -151,6 +151,11 @@ setup:
 		${FLAGS} ${STB} -o ${BUILDIR}/12_4 && \
 		${BUILDIR}/12_4
 
+13_1: ${SRCDIR}/13_1_multiple_lights.cpp shader_m camera
+	${CC} ${SRCDIR}/13_1_multiple_lights.cpp ${SHADER_M} ${CAMERA} \
+		${FLAGS} ${STB} -o ${BUILDIR}/13_1 && \
+		${BUILDIR}/13_1
+
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
 		${FLAGS} -c -o ${CAMERA} 
