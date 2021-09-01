@@ -82,7 +82,6 @@ int main() {
   // files, we require both the obj and the mtl file (which specifies how to map
   // the textures to the object).
   Model backpack_model("assets/models/backpack/backpack.obj");
-  std::cout << "Model loaded" << std::endl;
 
   // Render loop
   while (!glfwWindowShouldClose(window)) {
