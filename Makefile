@@ -8,7 +8,10 @@ FLAGS=-Wall -Werror -Wpedantic -Wextra -lglad -lglfw -ldl
 CAMERA=${OBJDIR}/camera.o
 SHADER_S=${OBJDIR}/shader_simple.o
 SHADER_M=${OBJDIR}/shader_m.o
+MESH=${OBJDIR}/mesh.o
+MODEL=${OBJDIR}/model.o
 # STB=-lstb
+ASSIMP=-lassimp
 
 setup:
 	@echo "Setting up..."
@@ -156,6 +159,16 @@ setup:
 		${FLAGS} ${STB} -o ${BUILDIR}/13_1 && \
 		${BUILDIR}/13_1
 
+13_1: ${SRCDIR}/13_1_multiple_lights.cpp shader_m camera
+	${CC} ${SRCDIR}/13_1_multiple_lights.cpp ${SHADER_M} ${CAMERA} \
+		${FLAGS} ${STB} -o ${BUILDIR}/13_1 && \
+		${BUILDIR}/13_1
+
+14_1: ${SRCDIR}/13_1_multiple_lights.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/14_1_model_loading.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/14_1 && \
+		${BUILDIR}/14_1
+
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
 		${FLAGS} -c -o ${CAMERA} 
@@ -167,6 +180,14 @@ shader_simple: ${SRCDIR}/shader_simple.cpp
 shader_m: ${SRCDIR}/shader_m.cpp
 	${CC} ${SRCDIR}/shader_m.cpp \
 		${FLAGS} -c -o ${SHADER_M} 
+
+mesh: ${SRCDIR}/mesh.cpp
+	${CC} ${SRCDIR}/mesh.cpp \
+		${FLAGS} -c -o ${MESH}
+
+model: ${SRCDIR}/model.cpp
+	${CC} ${SRCDIR}/model.cpp \
+		${FLAGS} -c -o ${MODEL}
 
 clean:
 	rm -rf ${BUILDIR}
