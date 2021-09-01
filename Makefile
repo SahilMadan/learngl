@@ -164,10 +164,15 @@ setup:
 		${FLAGS} ${STB} -o ${BUILDIR}/13_1 && \
 		${BUILDIR}/13_1
 
-14_1: ${SRCDIR}/13_1_multiple_lights.cpp shader_m camera mesh model
+14_1: ${SRCDIR}/14_1_model_loading.cpp shader_m camera mesh model
 	${CC} ${SRCDIR}/14_1_model_loading.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
 		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/14_1 && \
 		${BUILDIR}/14_1
+
+14_2: ${SRCDIR}/14_2_model_with_lighting.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/14_2_model_with_lighting.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/14_2 && \
+		${BUILDIR}/14_2
 
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
