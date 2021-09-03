@@ -189,6 +189,11 @@ setup:
 		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/15_3 && \
 		${BUILDIR}/15_3
 
+16_1: ${SRCDIR}/16_1_stencil_testing.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/16_1_stencil_testing.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/16_1 && \
+		${BUILDIR}/16_1
+
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
 		${FLAGS} -c -o ${CAMERA} 
