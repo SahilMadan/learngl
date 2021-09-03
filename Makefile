@@ -174,6 +174,21 @@ setup:
 		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/14_2 && \
 		${BUILDIR}/14_2
 
+15_1: ${SRCDIR}/15_1_depth_testing.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/15_1_depth_testing.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/15_1 && \
+		${BUILDIR}/15_1
+
+15_2: ${SRCDIR}/15_2_visualize_depth_buffer.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/15_2_visualize_depth_buffer.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/15_2 && \
+		${BUILDIR}/15_2
+
+15_3: ${SRCDIR}/15_3_visualize_linear_depth.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/15_3_visualize_linear_depth.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/15_3 && \
+		${BUILDIR}/15_3
+
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
 		${FLAGS} -c -o ${CAMERA} 
