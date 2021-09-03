@@ -159,11 +159,6 @@ setup:
 		${FLAGS} ${STB} -o ${BUILDIR}/13_1 && \
 		${BUILDIR}/13_1
 
-13_1: ${SRCDIR}/13_1_multiple_lights.cpp shader_m camera
-	${CC} ${SRCDIR}/13_1_multiple_lights.cpp ${SHADER_M} ${CAMERA} \
-		${FLAGS} ${STB} -o ${BUILDIR}/13_1 && \
-		${BUILDIR}/13_1
-
 14_1: ${SRCDIR}/14_1_model_loading.cpp shader_m camera mesh model
 	${CC} ${SRCDIR}/14_1_model_loading.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
 		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/14_1 && \
@@ -193,6 +188,11 @@ setup:
 	${CC} ${SRCDIR}/16_1_stencil_testing.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
 		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/16_1 && \
 		${BUILDIR}/16_1
+
+17_1: ${SRCDIR}/17_1_blending_discard.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/17_1_blending_discard.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/17_1 && \
+		${BUILDIR}/17_1
 
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
