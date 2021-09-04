@@ -199,6 +199,11 @@ setup:
 		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/17_2 && \
 		${BUILDIR}/17_2
 
+18_1: ${SRCDIR}/18_1_face_culling.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/18_1_face_culling.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/18_1 && \
+		${BUILDIR}/18_1
+
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
 		${FLAGS} -c -o ${CAMERA} 
