@@ -194,6 +194,11 @@ setup:
 		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/17_1 && \
 		${BUILDIR}/17_1
 
+17_2: ${SRCDIR}/17_2_blending_sorted.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/17_2_blending_sorted.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/17_2 && \
+		${BUILDIR}/17_2
+
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
 		${FLAGS} -c -o ${CAMERA} 
