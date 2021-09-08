@@ -214,6 +214,24 @@ setup:
 		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/19_2 && \
 		${BUILDIR}/19_2
 
+19_3: ${SRCDIR}/19_3_framebuffers_kernel_sharpen.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/19_3_framebuffers_kernel_sharpen.cpp \
+		${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/19_3 && \
+		${BUILDIR}/19_3
+
+19_4: ${SRCDIR}/19_4_framebuffers_kernel_blur.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/19_4_framebuffers_kernel_blur.cpp \
+		${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/19_4 && \
+		${BUILDIR}/19_4
+
+19_5: ${SRCDIR}/19_5_framebuffers_kernel_edge_detection.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/19_5_framebuffers_kernel_edge_detection.cpp \
+		${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/19_5 && \
+		${BUILDIR}/19_5
+
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
 		${FLAGS} -c -o ${CAMERA} 
