@@ -204,6 +204,16 @@ setup:
 		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/18_1 && \
 		${BUILDIR}/18_1
 
+19_1: ${SRCDIR}/19_1_framebuffers_inversion.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/19_1_framebuffers_inversion.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/19_1 && \
+		${BUILDIR}/19_1
+
+19_2: ${SRCDIR}/19_2_framebuffers_grayscale.cpp shader_m camera mesh model
+	${CC} ${SRCDIR}/19_2_framebuffers_grayscale.cpp ${SHADER_M} ${CAMERA} ${MESH} ${MODEL} \
+		${FLAGS} ${STB} ${ASSIMP} -o ${BUILDIR}/19_2 && \
+		${BUILDIR}/19_2
+
 camera: ${SRCDIR}/camera.cpp
 	${CC} ${SRCDIR}/camera.cpp \
 		${FLAGS} -c -o ${CAMERA} 
