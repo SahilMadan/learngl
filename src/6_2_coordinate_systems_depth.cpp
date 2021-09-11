@@ -7,6 +7,7 @@
 #include <iostream>
 
 #include "shader_m.hpp"
+#define STB_IMAGE_IMPLEMENTATION
 #include "stb_include.hpp"
 
 // Default settings

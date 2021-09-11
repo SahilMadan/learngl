@@ -2,10 +2,12 @@
 
 #include <assimp/material.h>
 #include <assimp/postprocess.h>
-#include <stb/stb_image.h>
 
 #include <assimp/Importer.hpp>
 #include <iostream>
+
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_include.hpp"
 
 unsigned int TextureFromFile(const char* path, const std::string& directory);
 

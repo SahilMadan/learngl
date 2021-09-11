@@ -3,8 +3,6 @@
 #include <GLFW/glfw3.h>
 
 #include <glm/ext/matrix_transform.hpp>
-#define STB_IMAGE_IMPLEMENTATION
-#include <stb/stb_image.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -14,6 +12,7 @@
 #include "camera.hpp"
 #include "model.hpp"
 #include "shader_m.hpp"
+#include "stb_include.hpp"
 
 // Default settings
 constexpr unsigned int kScreenWidth = 800;

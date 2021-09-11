@@ -1,8 +1,11 @@
 add_library(shader_simple STATIC shader_simple.cpp shader_simple.hpp)
 add_library(shader_m STATIC shader_m.cpp shader_m.hpp)
 add_library(camera STATIC camera.cpp camera.hpp)
+add_library(model STATIC model.cpp model.hpp)
+add_library(mesh STATIC mesh.cpp mesh.hpp)
 
 set(COMMON_LIBS shader_m camera)
+set(COMMON_LIBS_V2 shader_m camera model mesh)
 set(DEPS copy_assets copy_shaders)
 
 add_executable(1_1 1_1_hello_window.cpp)
@@ -80,3 +83,87 @@ add_dependencies(9_2 ${DEPS})
 add_executable(10_1 10_1_material.cpp)
 target_link_libraries(10_1 PUBLIC ${COMMON_LIBS})
 add_dependencies(10_1 ${DEPS})
+
+add_executable(11_1 11_1_diffuse_map.cpp)
+target_link_libraries(11_1 PUBLIC ${COMMON_LIBS})
+add_dependencies(11_1 ${DEPS})
+
+add_executable(11_2 11_2_specular_map.cpp)
+target_link_libraries(11_2 PUBLIC ${COMMON_LIBS})
+add_dependencies(11_2 ${DEPS})
+
+add_executable(12_1 12_1_light_casters_directional.cpp)
+target_link_libraries(12_1 PUBLIC ${COMMON_LIBS})
+add_dependencies(12_1 ${DEPS})
+
+add_executable(12_2 12_2_light_casters_point.cpp)
+target_link_libraries(12_2 PUBLIC ${COMMON_LIBS})
+add_dependencies(12_2 ${DEPS})
+
+add_executable(12_3 12_3_light_casters_spot.cpp)
+target_link_libraries(12_3 PUBLIC ${COMMON_LIBS})
+add_dependencies(12_3 ${DEPS})
+
+add_executable(12_4 12_4_light_casters_spot_soft.cpp)
+target_link_libraries(12_4 PUBLIC ${COMMON_LIBS})
+add_dependencies(12_4 ${DEPS})
+
+add_executable(13_1 13_1_multiple_lights.cpp)
+target_link_libraries(13_1 PUBLIC ${COMMON_LIBS})
+add_dependencies(13_1 ${DEPS})
+
+add_executable(14_1 14_1_model_loading.cpp)
+target_link_libraries(14_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(14_1 ${DEPS})
+
+add_executable(14_2 14_2_model_with_lighting.cpp)
+target_link_libraries(14_2 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(14_2 ${DEPS})
+
+add_executable(15_1 15_1_depth_testing.cpp)
+target_link_libraries(15_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(15_1 ${DEPS})
+
+add_executable(15_2 15_2_visualize_depth_buffer.cpp)
+target_link_libraries(15_2 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(15_2 ${DEPS})
+
+add_executable(15_3 15_3_visualize_linear_depth.cpp)
+target_link_libraries(15_3 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(15_3 ${DEPS})
+
+add_executable(16_1 16_1_stencil_testing.cpp)
+target_link_libraries(16_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(16_1 ${DEPS})
+
+add_executable(17_1 17_1_blending_discard.cpp)
+target_link_libraries(17_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(17_1 ${DEPS})
+
+add_executable(17_2 17_2_blending_sorted.cpp)
+target_link_libraries(17_2 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(17_2 ${DEPS})
+
+add_executable(18_1 18_1_face_culling.cpp)
+target_link_libraries(18_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(18_1 ${DEPS})
+
+add_executable(19_1 19_1_framebuffers_inversion.cpp)
+target_link_libraries(19_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(19_1 ${DEPS})
+
+add_executable(19_2 19_2_framebuffers_grayscale.cpp)
+target_link_libraries(19_2 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(19_2 ${DEPS})
+
+add_executable(19_3 19_3_framebuffers_kernel_sharpen.cpp)
+target_link_libraries(19_3 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(19_3 ${DEPS})
+
+add_executable(19_4 19_4_framebuffers_kernel_blur.cpp)
+target_link_libraries(19_4 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(19_4 ${DEPS})
+
+add_executable(19_5 19_5_framebuffers_kernel_edge_detection.cpp)
+target_link_libraries(19_5 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(19_5 ${DEPS})

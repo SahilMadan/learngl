@@ -1,6 +1,6 @@
-#ifndef LEARNGL_STB_HPP_
+#ifndef LEARNGL_STB_INCLUDE_HPP_
+#define LEARNGL_STB_INCLUDE_HPP_
 
-#define STB_IMAGE_IMPLEMENTATION
 #if defined(_WIN32)
 #include <stb_image.h>
 #else
