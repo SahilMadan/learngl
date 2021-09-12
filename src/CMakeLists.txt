@@ -225,3 +225,8 @@ add_executable(20_1 20_1_cubemaps_skybox.cpp)
 target_link_libraries(20_1 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(20_1 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(20_1 ${DEPS})
+
+add_executable(20_2 20_2_cubemaps_skybox_optimized.cpp)
+target_link_libraries(20_2 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(20_2 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(20_2 ${DEPS})
