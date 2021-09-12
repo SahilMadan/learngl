@@ -220,3 +220,8 @@ add_executable(19_5 19_5_framebuffers_kernel_edge_detection.cpp)
 target_link_libraries(19_5 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(19_5 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(19_5 ${DEPS})
+
+add_executable(20_1 20_1_cubemaps_skybox.cpp)
+target_link_libraries(20_1 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(20_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(20_1 ${DEPS})
