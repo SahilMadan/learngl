@@ -76,7 +76,7 @@ int main() {
   stbi_set_flip_vertically_on_load(true);
 
   Shader shader("shaders/20_3_cubemaps_environment_mapping.vs",
-                "shaders/20_3_cubemaps_environment_mapping.fs");
+                "shaders/20_3_cubemaps_environment_mapping_refraction.fs");
 
   // Set up vertex data and buffers and configure vertex attributes
   // Cube vertices: position (x, y, z), normal (x, y, z)
