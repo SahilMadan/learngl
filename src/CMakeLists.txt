@@ -245,3 +245,8 @@ add_executable(21_1 21_1_point_size.cpp)
 target_link_libraries(21_1 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(21_1 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(21_1 ${DEPS})
+
+add_executable(21_2 21_2_frag_coord.cpp)
+target_link_libraries(21_2 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(21_2 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(21_2 ${DEPS})
