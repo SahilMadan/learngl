@@ -260,3 +260,8 @@ add_executable(21_4 21_4_frag_depth.cpp)
 target_link_libraries(21_4 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(21_4 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(21_4 ${DEPS})
+
+add_executable(21_5 21_5_interface_blocks.cpp)
+target_link_libraries(21_5 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(21_5 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(21_5 ${DEPS})
