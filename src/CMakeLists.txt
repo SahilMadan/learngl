@@ -240,3 +240,8 @@ add_executable(20_4 20_4_cubemaps_environment_mapping_refraction.cpp)
 target_link_libraries(20_4 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(20_4 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(20_4 ${DEPS})
+
+add_executable(21_1 21_1_point_size.cpp)
+target_link_libraries(21_1 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(21_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(21_1 ${DEPS})
