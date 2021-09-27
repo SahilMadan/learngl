@@ -255,3 +255,8 @@ add_executable(21_3 21_3_backfacing_texture.cpp)
 target_link_libraries(21_3 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(21_3 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(21_3 ${DEPS})
+
+add_executable(21_4 21_4_frag_depth.cpp)
+target_link_libraries(21_4 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(21_4 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(21_4 ${DEPS})
