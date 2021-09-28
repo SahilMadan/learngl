@@ -265,3 +265,8 @@ add_executable(21_5 21_5_interface_blocks.cpp)
 target_link_libraries(21_5 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(21_5 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(21_5 ${DEPS})
+
+add_executable(21_6 21_6_uniform_buffer_objects.cpp)
+target_link_libraries(21_6 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(21_6 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(21_6 ${DEPS})
