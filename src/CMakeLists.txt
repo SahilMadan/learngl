@@ -275,3 +275,8 @@ add_executable(22_1 22_1_geometry_shader_houses.cpp)
 target_link_libraries(22_1 PRIVATE ${CORELIBS})
 target_link_libraries(22_1 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(22_1 ${DEPS})
+
+add_executable(22_2 22_2_geometry_shader_exploding.cpp)
+target_link_libraries(22_2 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(22_2 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(22_2 ${DEPS})
