@@ -270,3 +270,8 @@ add_executable(21_6 21_6_uniform_buffer_objects.cpp)
 target_link_libraries(21_6 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(21_6 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(21_6 ${DEPS})
+
+add_executable(22_1 22_1_geometry_shader_houses.cpp)
+target_link_libraries(22_1 PRIVATE ${CORELIBS})
+target_link_libraries(22_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(22_1 ${DEPS})

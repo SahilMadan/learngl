@@ -5,13 +5,20 @@
 #include <sstream>
 #include <string>
 
-Shader::Shader(const char *vertex_path, const char *fragment_path) {
+void Shader::Init(const char *vertex_path, const char *fragment_path,
+                  const char *geometry_path) {
   const auto vertex = CompileShader(GL_VERTEX_SHADER, vertex_path);
   const auto fragment = CompileShader(GL_FRAGMENT_SHADER, fragment_path);
+  const auto geometry = geometry_path != nullptr
+                            ? CompileShader(GL_GEOMETRY_SHADER, geometry_path)
+                            : 0;
 
   id_ = glCreateProgram();
   glAttachShader(id_, vertex);
   glAttachShader(id_, fragment);
+  if (geometry_path != nullptr) {
+    glAttachShader(id_, geometry);
+  }
   glLinkProgram(id_);
 
   int success;
@@ -24,6 +31,18 @@ Shader::Shader(const char *vertex_path, const char *fragment_path) {
 
   glDeleteShader(vertex);
   glDeleteShader(fragment);
+  if (geometry_path != nullptr) {
+    glDeleteShader(geometry);
+  }
+}
+
+Shader::Shader(const char *vertex_path, const char *fragment_path) {
+  Init(vertex_path, fragment_path, nullptr);
+}
+
+Shader::Shader(const char *vertex_path, const char *fragment_path,
+               const char *geometry_path) {
+  Init(vertex_path, fragment_path, geometry_path);
 }
 
 unsigned int Shader::CompileShader(GLenum shader_type, const char *path) {

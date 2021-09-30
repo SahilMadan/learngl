@@ -9,6 +9,7 @@
 class Shader {
  public:
   Shader(const char* vertex_path, const char* fragment_path);
+  Shader(const char* vertex_path, const char* fragment_path, const char* geometry_path);
   unsigned int id() { return id_; }
   void Use() const;
 
@@ -26,6 +27,7 @@ class Shader {
   void SetMat4(const std::string& name, const glm::mat4& value) const;
 
  private:
+  void Init(const char* vertex_path, const char* fragment_path, const char* geometry_path);
   unsigned int id_;
   unsigned int CompileShader(GLenum shader_type, const char* path);
 };
