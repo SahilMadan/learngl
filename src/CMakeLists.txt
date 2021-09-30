@@ -280,3 +280,8 @@ add_executable(22_2 22_2_geometry_shader_exploding.cpp)
 target_link_libraries(22_2 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(22_2 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(22_2 ${DEPS})
+
+add_executable(22_3 22_3_visualize_normal_vector.cpp)
+target_link_libraries(22_3 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(22_3 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(22_3 ${DEPS})
