@@ -285,3 +285,13 @@ add_executable(22_3 22_3_visualize_normal_vector.cpp)
 target_link_libraries(22_3 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(22_3 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(22_3 ${DEPS})
+
+add_executable(23_1 23_1_instancing_quads.cpp)
+target_link_libraries(23_1 PRIVATE ${CORELIBS})
+target_link_libraries(23_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(23_1 ${DEPS})
+
+add_executable(23_2 23_2_instanced_arrays.cpp)
+target_link_libraries(23_2 PRIVATE ${CORELIBS})
+target_link_libraries(23_2 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(23_2 ${DEPS})
