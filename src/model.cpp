@@ -19,6 +19,10 @@ void Model::Draw(Shader& shader) {
   }
 }
 
+const std::vector<Mesh>& Model::Meshes() const {
+  return meshes_;
+}
+
 void Model::LoadModel(std::string path) {
   Assimp::Importer import;
   const aiScene* scene =

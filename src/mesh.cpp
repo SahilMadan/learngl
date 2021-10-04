@@ -70,3 +70,7 @@ void Mesh::Draw(Shader& shader) {
   glBindVertexArray(0);
   glActiveTexture(GL_TEXTURE0);
 }
+
+unsigned int Mesh::vao() const {
+  return vao_;
+}

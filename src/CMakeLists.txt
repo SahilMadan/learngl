@@ -295,3 +295,8 @@ add_executable(23_3 23_3_asteroids.cpp)
 target_link_libraries(23_3 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(23_3 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(23_3 ${DEPS})
+
+add_executable(23_4 23_4_asteroids_instanced.cpp)
+target_link_libraries(23_4 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(23_4 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(23_4 ${DEPS})
