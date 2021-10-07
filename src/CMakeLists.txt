@@ -300,3 +300,18 @@ add_executable(23_4 23_4_asteroids_instanced.cpp)
 target_link_libraries(23_4 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(23_4 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(23_4 ${DEPS})
+
+add_executable(24_1 24_1_anti_aliasing_msaa.cpp)
+target_link_libraries(24_1 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(24_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(24_1 ${DEPS})
+
+add_executable(24_2 24_2_anti_aliasing_offscreen.cpp)
+target_link_libraries(24_2 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(24_2 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(24_2 ${DEPS})
+
+add_executable(24_3 24_3_anti_aliasing_post_processing.cpp)
+target_link_libraries(24_3 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(24_3 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(24_3 ${DEPS})
