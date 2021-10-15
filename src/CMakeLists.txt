@@ -315,3 +315,8 @@ add_executable(24_3 24_3_anti_aliasing_post_processing.cpp)
 target_link_libraries(24_3 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(24_3 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(24_3 ${DEPS})
+
+add_executable(25_1 25_1_blinn_phong.cpp)
+target_link_libraries(25_1 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(25_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(25_1 ${DEPS})
