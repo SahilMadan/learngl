@@ -320,3 +320,8 @@ add_executable(25_1 25_1_blinn_phong.cpp)
 target_link_libraries(25_1 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(25_1 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(25_1 ${DEPS})
+
+add_executable(26_1 26_1_gamma_correction.cpp)
+target_link_libraries(26_1 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(26_1 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(26_1 ${DEPS})
