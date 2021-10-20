@@ -65,6 +65,7 @@ void main()
     color *= lighting;
 
     if (gamma) {
+        // Apply gamma correction in the fragment shader. Raise each individual color component of fragColor by 1.0/2.2.
         color = pow(color, vec3(1.0 / 2.2));
     }
 
