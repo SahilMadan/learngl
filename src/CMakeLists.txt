@@ -330,3 +330,8 @@ add_executable(27_1 27_1_shadow_mapping_depth.cpp)
 target_link_libraries(27_1 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(27_1 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(27_1 ${DEPS})
+
+add_executable(27_2 27_2_shadow_mapping_base.cpp)
+target_link_libraries(27_2 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(27_2 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(27_2 ${DEPS})
