@@ -345,3 +345,8 @@ add_executable(27_4 27_4_shadow_mapping_peter_panning.cpp)
 target_link_libraries(27_4 PRIVATE ${CORELIBS} assimp::assimp)
 target_link_libraries(27_4 PUBLIC ${COMMON_LIBS_V2})
 add_dependencies(27_4 ${DEPS})
+
+add_executable(27_5 27_5_shadow_mapping_over_sampling.cpp)
+target_link_libraries(27_5 PRIVATE ${CORELIBS} assimp::assimp)
+target_link_libraries(27_5 PUBLIC ${COMMON_LIBS_V2})
+add_dependencies(27_5 ${DEPS})
