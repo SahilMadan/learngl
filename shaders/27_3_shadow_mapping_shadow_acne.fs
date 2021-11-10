@@ -34,7 +34,10 @@ float ShadowCalculation(vec4 fragPosLightSpace, vec3 normal, vec3 light_directio
     // Because the shadow map is limited by resolution, multiple fragments sample the same value when far away
     // from the light source. This becomes an issue when the lght source looks at an angle from the surface.
     // Thus, some are "above" the surface, and some are "below" the surface. I.e. some considered to be in
-    // the shadow, some not.
+    // the shadow, some not. Why?
+    // Well, the shadow map is literally just a texture of depth, so you need to sample from some other
+    // neighboring 'ray' (i.e. value), which might be lower or higher, given the angle, to what is actually
+    // the surface.
     //
     // To solve, add a shadow bias.
     //
